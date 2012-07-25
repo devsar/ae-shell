@@ -82,7 +82,7 @@ def load_environment():
   # get the APP_ID
   try:
     from google.appengine.tools import dev_appserver
-    appconfig, unused_matcher = dev_appserver.LoadAppConfig(PROJECT_DIR, {})
+    appconfig, unused_matcher, x = dev_appserver.LoadAppConfig(PROJECT_DIR, {})
     APP_ID = appconfig.application
   except (ImportError, yaml_errors.EventListenerYAMLError), e:
     logging.warn("Could not read the Application ID from app.yaml. "
